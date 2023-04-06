@@ -40,6 +40,7 @@ main {
     border-color: hsl(270, 3%, 87%);
 }
 
+
 #cardNameLabel, #cardNumLabel{
     width: inherit;
     max-height: 30px;
@@ -87,6 +88,21 @@ main {
     cursor: pointer;
 }
 
+.errorMessage {
+    margin: 0;
+    font-size: 0.8em;
+    color: hsl(0, 100%, 66%);
+}
+
+#cardNumError, #cardNameError{
+    display: none;
+    width: inherit;
+}
+
+#expDateError, #cvcError {
+    display: none;
+    width: 45%;
+}
 
 .frontCard {
     color: white;
