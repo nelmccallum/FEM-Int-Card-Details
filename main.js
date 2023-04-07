@@ -10,11 +10,14 @@ const App = {
         month: document.getElementById("expMonth"),
         year: document.getElementById("expYear"),
         userCVC: document.getElementById("cvcInput"),
-        submit: document.querySelector("button"),
+        submit: document.getElementById("submitBtn"),
+        continue: document.getElementById("resetBtn"),
         cvcError: document.getElementById("cvcError"),
         expError: document.getElementById("expDateError"),
         numError: document.getElementById("cardNumError"),
         nameError: document.getElementById("cardNameError"),
+        TYmesseage: document.getElementById("ThankYou"),
+        InputContainer: document.getElementById("inputContainer"),
     }
 }
 let expDateBlank = false;
@@ -41,6 +44,7 @@ App.$.userCVC.addEventListener("keyup", function(){
 
 App.$.submit.onclick = function(){
     let conditions = 0;
+    console.log(conditions);
     if (App.$.userName.value === "" || parseInt(App.$.userName.value)){
         App.$.nameError.style.display = "block"
     } else {
@@ -58,7 +62,11 @@ App.$.submit.onclick = function(){
     if (App.$.month.value === "" || App.$.year.value === ""){
         App.$.expError.style.display = "block";
         expDateBlank = true;
-    } else {
+    } else if(isNaN(App.$.month.value) || isNaN(App.$.year.value)){
+        App.$.expError.innerText = "Must be a number";
+        App.$.expError.style.display = "block";
+        expDateBlank = true;
+    }   else {
         App.$.expError.style.display = "none";
         conditions += 1;
     };
@@ -72,4 +80,16 @@ App.$.submit.onclick = function(){
         App.$.cvcError.style.display = "none";
         conditions += 1;
     };
+
+    if (conditions === 4){
+        App.$.InputContainer.style.display = "none";
+        App.$.TYmesseage.style.display = "flex";
+    }
+    console.log(conditions);
 };
+
+App.$.continue.onclick = function(){
+    App.$.TYmesseage.style.display = "none";
+    App.$.InputContainer.style.display = "flex";
+    window.location.reload();
+}

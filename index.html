@@ -20,8 +20,7 @@
     <div class="backCard">
       <p id="cardCVC">000</p>
     </div>
-
-    <div class="inputContainer">
+    <div id="inputContainer">
       <label id="cardNameLabel">CARDHOLDER NAME</label>
         <input type="text" id="nameInput" placeholder="e.g. Jane Appleseed">
         <p class="errorMessage" id="cardNameError">Please enter name</p>
@@ -34,8 +33,15 @@
         <input type="text" id="cvcInput" placeholder="e.g. 123">
         <p class="errorMessage" id="expDateError">Can't be blank</p>
         <span class="errorMessage" id="cvcError">Can't be blank</span>
-      <button type="button" formaction="#">Confirm</button>
+      <button id="submitBtn" type="button" formaction="#">Confirm</button>
     </div>
+      <!-- Completed state start-->
+      <div id="ThankYou">
+        <img src="./images/icon-complete.svg" width="70px">
+        <h1>THANK YOU!</h1>
+        <p>We've added your card details</p>
+        <button id="resetBtn" type="reset" formaction="#">Continue</button>
+      </div>
   </main>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
