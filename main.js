@@ -50,6 +50,7 @@ App.$.submit.onclick = function(){
         App.$.userName.style.borderColor = "hsl(0, 100%, 66%)";
     } else {
         App.$.nameError.style.display = "none";
+        App.$.userName.style.borderColor = "hsl(270, 3%, 87%)";
         conditions += 1;
     };
 
@@ -58,6 +59,7 @@ App.$.submit.onclick = function(){
         App.$.userNum.style.borderColor = "hsl(0, 100%, 66%)";
     } else {
         App.$.numError.style.display = "none";
+        App.$.userNum.style.borderColor = "hsl(270, 3%, 87%)";
         conditions += 1;
     };
 
@@ -74,6 +76,8 @@ App.$.submit.onclick = function(){
         expDateBlank = true;
     }   else {
         App.$.expError.style.display = "none";
+        App.$.month.style.borderColor = "hsl(270, 3%, 87%)";
+        App.$.year.style.borderColor = "hsl(270, 3%, 87%)";
         conditions += 1;
     };
 
@@ -86,6 +90,7 @@ App.$.submit.onclick = function(){
         App.$.cvcError.style.marginLeft = "47%"; 
     } else {
         App.$.cvcError.style.display = "none";
+        App.$.userCVC.style.borderColor = "hsl(270, 3%, 87%)";
         conditions += 1;
     };
 

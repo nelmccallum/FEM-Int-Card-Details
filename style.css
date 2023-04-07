@@ -2,10 +2,12 @@
     font-family: "Space Grotesk", sans-serif;
     font-size: 18px;
 }
+
 body {
     margin: 0;
     padding: 0;
     border: 0;
+    min-width: 375px;
 }
 
 main {
@@ -13,6 +15,7 @@ main {
     background-repeat: no-repeat;
     height: 900px;
     width: 1440px;
+    min-width: 375px;
 }
 
 #inputContainer {
@@ -68,6 +71,7 @@ main {
     font-family: "Space Grotesk", sans-serif;
     font-size: 18px;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 
@@ -80,8 +84,12 @@ main {
     border: 1;
     border-style: solid;
     border-color: hsl(270, 3%, 87%);
+    height: 40px;
 }
 
+#inputContainer input:focus{
+    border-image: linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%)) 1;
+}
 
 #cardNameLabel, #cardNumLabel{
     width: inherit;
@@ -92,7 +100,6 @@ main {
 
 #nameInput, #numInput {
     width: inherit;
-    height: 40px;
 }
 
 #expDate {
@@ -110,13 +117,11 @@ main {
 
 #expMonth, #expYear {
     width: 50px;
-    height: 40px;
 }
 
 #cvcInput {
     flex-grow: 1;
     width: 10%;
-    height: 40px;
 }
 
 #inputContainer button{
@@ -128,6 +133,19 @@ main {
     font-family: "Space Grotesk", sans-serif;
     font-size: 18px;
     cursor: pointer;
+    border-radius: 10px;
+}
+
+#inputContainer button:active{
+    background-color: hsl(270, 3%, 87%);
+    border: 1;
+    border-color: hsl(279, 6%, 55%);
+}
+
+#ThankYou button:active{
+    background-color: hsl(270, 3%, 87%);
+    border: 1;
+    border-color: hsl(279, 6%, 55%);
 }
 
 .errorMessage {
@@ -202,10 +220,186 @@ main {
 }
 
 
-.attribution { 
-    font-size: 11px; text-align: center; 
+.attribution {
+    font-size: 11px; 
+    text-align: center; 
 }
 
 .attribution a { 
     color: hsl(228, 45%, 44%); 
 }
+
+@media(max-width:375px){
+    main {
+        background-image: url(./images/bg-main-mobile.png);
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: contain;
+        width: 375px;
+        height: 650px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    #inputContainer {
+        position: relative;
+        top: -80px;
+        margin: 0 auto;
+        color: hsl(278, 68%, 11%);
+        font-weight: 500;
+        float: none;
+        display: flex;
+        flex-wrap: wrap;
+        height: max-content;
+        width: 90%;
+        gap: 3px;
+    }
+
+    #inputContainer input{
+        padding: 2px 20px;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 16px;
+        border-radius: 10px;
+        outline: 0;
+        border: 1;
+        border-style: solid;
+        border-color: hsl(270, 3%, 87%);
+        height: 35px;
+    }
+
+    #inputContainer label{
+        height: max-content;
+        padding-top: 10px;
+        font-size: .7em;
+    }
+
+    #inputContainer button{
+        margin: 15px auto;
+        width: 90%;
+        height: 40px;
+        background-color: hsl(278, 68%, 11%);
+        color: white;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    #expMonth, #expYear {
+        width: 30px;
+    }
+
+    .errorMessage {
+        margin: 0;
+        font-size: 0.6em;
+        color: hsl(0, 100%, 66%);
+    }
+
+    #ThankYou{
+        margin: 0 auto;
+        display: none;
+        flex-wrap: wrap;
+        flex-direction: column;
+        float: none;
+        position: relative;
+        top: -50px;
+        width: 90%;
+        height: max-content;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    #ThankYou > *{
+        margin: 0 auto;
+    }
+    
+    #ThankYou h1{
+        letter-spacing: 0.1em;
+    }
+    
+    #ThankYou p{
+        color: hsl(279, 6%, 55%);
+    }
+    
+    #ThankYou button{
+        margin: 0px auto;
+        width: 70%;
+        height: 40px;
+        background-color: hsl(278, 68%, 11%);
+        color: white;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    /*#inputContainer > * {
+        display: none;
+    }*/
+
+    .frontCard {
+        position: relative;
+        top: 125px;
+        left: 10px;
+        color: white;
+        background-image: url(./images/bg-card-front.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 80%;
+        height: 30%;
+        z-index: 1;
+    }
+
+    #cardLogo{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 20%;
+    }
+    
+    #cardName{
+        position: absolute;
+        top: 130px;
+        left: 30px;
+        font-size: .8em;
+    }
+    
+    #cardExp{
+        position: absolute;
+        top: 130px;
+        right: 30px;
+        font-size: .8em;
+    }
+    
+    #cardNum {
+        position: absolute;
+        top: 70px;
+        left: 30px;
+        font-size: 1.0em;
+    }
+
+    .backCard {
+        position: relative;
+        top: -170px;
+        left: 60px;
+        background-image: url(./images/bg-card-back.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 80%;
+        height: 30%;
+    }
+
+    #cardCVC{
+        position: absolute;
+        top: 58px;
+        right: 32px;
+        font-size: .8em;
+    }
+}
+
+.sr-only {
+    position: absolute ;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    top: auto;
+    overflow: hidden;
+  }
