@@ -47,6 +47,7 @@ App.$.submit.onclick = function(){
     console.log(conditions);
     if (App.$.userName.value === "" || parseInt(App.$.userName.value)){
         App.$.nameError.style.display = "block"
+        App.$.userName.style.borderColor = "hsl(0, 100%, 66%)";
     } else {
         App.$.nameError.style.display = "none";
         conditions += 1;
@@ -54,6 +55,7 @@ App.$.submit.onclick = function(){
 
     if (isNaN(App.$.userNum.value) || App.$.userNum.value === ""){
         App.$.numError.style.display = "block";
+        App.$.userNum.style.borderColor = "hsl(0, 100%, 66%)";
     } else {
         App.$.numError.style.display = "none";
         conditions += 1;
@@ -61,9 +63,13 @@ App.$.submit.onclick = function(){
 
     if (App.$.month.value === "" || App.$.year.value === ""){
         App.$.expError.style.display = "block";
+        App.$.month.style.borderColor = "hsl(0, 100%, 66%)";
+        App.$.year.style.borderColor = "hsl(0, 100%, 66%)";
         expDateBlank = true;
     } else if(isNaN(App.$.month.value) || isNaN(App.$.year.value)){
         App.$.expError.innerText = "Must be a number";
+        App.$.month.style.borderColor = "hsl(0, 100%, 66%)";
+        App.$.year.style.borderColor = "hsl(0, 100%, 66%)";
         App.$.expError.style.display = "block";
         expDateBlank = true;
     }   else {
@@ -73,8 +79,10 @@ App.$.submit.onclick = function(){
 
     if (App.$.userCVC.value === "" && expDateBlank){
         App.$.cvcError.style.display = "block";
+        App.$.userCVC.style.borderColor = "hsl(0, 100%, 66%)";
     } else if (App.$.userCVC.value === "" && !expDateBlank){
         App.$.cvcError.style.display = "block";
+        App.$.userCVC.style.borderColor = "hsl(0, 100%, 66%)";
         App.$.cvcError.style.marginLeft = "47%"; 
     } else {
         App.$.cvcError.style.display = "none";
